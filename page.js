@@ -154,7 +154,7 @@ export default function Home() {
         <div className="contactInner">
           <p className="eyebrow">05 / CONTACT</p>
           <h2>Have an idea?<br /><span>Let&apos;s build it.</span></h2>
-          <a className="email" href="mailto:tejas@example.com">tejas@example.com ↗</a>
+          <a className="email" href="mailto:tejas@example.com">tejasshetty0604@gmail.com ↗</a>
           <div className="socials">
             <a href="https://github.com/tejasshettyyy" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://www.linkedin.com/in/tejas-s-shetty-34750436b/" target="_blank" rel="noreferrer">LinkedIn</a>
