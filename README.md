@@ -33,16 +33,3 @@ git remote add origin YOUR_GITHUB_REPOSITORY_URL
 git push -u origin main
 ```
 
-## Customize
-
-Edit `app/page.js` to change:
-- About section
-- Skills
-- Projects
-- Experience
-- Email
-- Social links
-
-Edit `app/globals.css` to change colors, spacing, typography and layout.
-
-Replace `tejas@example.com` with your real email before publishing.
