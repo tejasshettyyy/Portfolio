@@ -1,0 +1,240 @@
+:root {
+  --bg: #080808;
+  --surface: #101010;
+  --surface-2: #151515;
+  --text: #f2f0eb;
+  --muted: #989898;
+  --line: #272727;
+  --accent: #ff6a00;
+  --accent-soft: #ff8a3d;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.nav {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  width: 100%;
+  height: 76px;
+  padding: 0 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8,8,8,.78);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: var(--accent);
+}
+
+.navLinks { display: flex; gap: 32px; }
+.navLinks a, .navButton { font-size: 13px; color: #bdbdbd; transition: .2s; }
+.navLinks a:hover, .navButton:hover { color: white; }
+
+.navButton {
+  border: 1px solid #383838;
+  padding: 10px 16px;
+  border-radius: 999px;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 170px 10vw 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.heroGlow {
+  position: absolute;
+  width: 650px;
+  height: 650px;
+  right: -260px;
+  top: 100px;
+  background: radial-gradient(circle, rgba(255,106,0,.18), transparent 68%);
+  pointer-events: none;
+}
+
+.heroContent { max-width: 950px; position: relative; z-index: 1; }
+
+.eyebrow, .sectionLabel, .projectType {
+  color: var(--accent);
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font-size: clamp(60px, 10vw, 145px);
+  line-height: .88;
+  letter-spacing: -7px;
+  max-width: 1000px;
+  margin: 28px 0;
+}
+
+.hero h1 span, h2 span { color: var(--accent); }
+
+.heroText {
+  max-width: 610px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.heroActions { display: flex; gap: 12px; margin-top: 36px; }
+
+.primaryButton, .secondaryButton {
+  padding: 14px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.primaryButton { background: var(--accent); color: #080808; }
+.primaryButton span { margin-left: 8px; }
+.secondaryButton { border: 1px solid #3b3b3b; }
+
+.heroMeta {
+  display: flex;
+  gap: 55px;
+  margin-top: 100px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.heroMeta div { display: flex; gap: 12px; }
+.heroMeta span { color: var(--accent); }
+
+.section {
+  padding: 120px 10vw;
+  border-bottom: 1px solid var(--line);
+}
+
+.sectionLabel { margin-bottom: 65px; color: #686868; }
+
+.aboutGrid, .skillsHeader, .projectsHeader, .experienceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8vw;
+}
+
+h2 {
+  font-size: clamp(45px, 6vw, 82px);
+  line-height: .95;
+  letter-spacing: -4px;
+}
+
+.aboutGrid p, .projectsHeader p, .experienceGrid p {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 22px;
+}
+
+.textLink {
+  display: inline-block;
+  margin-top: 12px;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 4px;
+  color: white;
+  font-size: 13px;
+}
+
+.skillsHeader { align-items: end; margin-bottom: 55px; }
+.skillsHeader p { color: var(--muted); }
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.skillCard {
+  min-height: 145px;
+  padding: 25px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: .25s;
+}
+.skillCard:hover { background: var(--surface); }
+.skillCard span { color: #555; font-size: 11px; }
+.skillCard strong { font-size: 22px; }
+
+.projectsHeader { align-items: end; margin-bottom: 60px; }
+.projectList { border-top: 1px solid var(--line); }
+
+.projectCard {
+  display: grid;
+  grid-template-columns: 90px 1fr 60px;
+  gap: 25px;
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+  transition: .25s;
+}
+.projectCard:hover { padding-left: 15px; }
+.projectNumber { color: #555; font-size: 12px; }
+.projectMain { max-width: 750px; }
+.projectMain h3 { font-size: 38px; letter-spacing: -1.5px; margin: 8px 0 12px; }
+.projectMain > p:not(.projectType) { color: var(--muted); max-width: 680px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.tags span { border: 1px solid #303030; padding: 5px 9px; border-radius: 999px; color: #aaa; font-size: 11px; }
+.projectArrow { font-size: 25px; justify-self: end; color: var(--accent); }
+
+.experienceGrid { align-items: start; }
+.experience h2 { margin: 15px 0 8px; }
+.role { color: var(--accent) !important; font-size: 13px !important; }
+
+.contact {
+  padding: 150px 10vw;
+  background: var(--surface);
+}
+.contactInner { max-width: 1000px; }
+.contact h2 { margin: 25px 0 45px; }
+.email { font-size: clamp(20px, 3vw, 34px); border-bottom: 1px solid #555; padding-bottom: 8px; }
+.socials { display: flex; gap: 25px; margin-top: 50px; color: #aaa; font-size: 13px; }
+
+footer {
+  padding: 28px 10vw;
+  display: flex;
+  justify-content: space-between;
+  color: #555;
+  font-size: 11px;
+}
+
+@media (max-width: 800px) {
+  .nav { padding: 0 6%; }
+  .navLinks { display: none; }
+  .hero, .section, .contact { padding-left: 7%; padding-right: 7%; }
+  .hero h1 { font-size: clamp(55px, 17vw, 100px); letter-spacing: -5px; }
+  .heroText { font-size: 15px; }
+  .heroMeta { gap: 20px; flex-wrap: wrap; margin-top: 65px; }
+  .aboutGrid, .skillsHeader, .projectsHeader, .experienceGrid { grid-template-columns: 1fr; gap: 35px; }
+  .skillsGrid { grid-template-columns: repeat(2, 1fr); }
+  .section { padding-top: 90px; padding-bottom: 90px; }
+  .projectCard { grid-template-columns: 40px 1fr 30px; gap: 12px; }
+  .projectMain h3 { font-size: 29px; }
+  footer { padding: 25px 7%; flex-direction: column; gap: 8px; }
+}
